@@ -3,12 +3,17 @@
   "name": "AntyWyr",
   "description": "Replaces javascript window.open with real links on wykop.pl",
   "homepage_url": "https://github.com/sin2000/antywyr",
-  "version": "1.0",
+  "version": "1.1",
 
-  "content_scripts": [
-    {
-      "matches": ["https://www.wykop.pl/*"],
-      "js": ["./substitute.js"]
-    }
-  ]
+  "permissions": [
+    "https://www.wykop.pl/*"
+  ],
+
+  "background": {
+    "scripts": ["./main.js"],
+    "persistent": true
+  },
+
+  "user_scripts": {
+  }
 }
